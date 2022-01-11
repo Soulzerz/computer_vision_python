@@ -23,6 +23,7 @@ hands = media_pipe_hands.Hands()
 # Starts video capturing process.
 while True:
     success, img = capture.read()
+    img = cv2.flip(img, 1)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = hands.process(img_rgb)
     
